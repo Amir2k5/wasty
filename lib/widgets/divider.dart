@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
+//    DIVIDER ON LOGIN AND SIGN UP PAGE 
+
 Row divider(){return Row(
                     children: [
                       Expanded(

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-SizedBox txfield(String tx,IconData icon,Color iconcolor,Color text,bool portrait,bool obscure,{IconData? icon2}) {
+//    TEXTFIELDS ON LOGIN AND SIGN UP PAGE
+
+
+SizedBox txfield(String tx,IconData icon,Color iconcolor,Color text,bool portrait,bool obscure,TextEditingController controller,{IconData? icon2}) {
   return SizedBox(
     width: double.infinity,
     child: Card(
       elevation: 8,
       child: TextField(
+        controller:controller,
         obscureText: obscure,
         decoration: InputDecoration(
           prefixIcon: Icon(
@@ -25,3 +29,4 @@ SizedBox txfield(String tx,IconData icon,Color iconcolor,Color text,bool portrai
     ),
   );
 }
+

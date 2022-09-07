@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
+// REDIRECTS TO LOGIN OR SIGN UP FOR THIS APP 
+
 InkWell redirects(
     String image, String platform, double height, double width, bool portrait) {
   return InkWell(
@@ -22,7 +25,7 @@ InkWell redirects(
         ),
         SizedBox(width: 50.w,),
         Text(platform)
-      ]),
+      ],),
     ),
   );
 }

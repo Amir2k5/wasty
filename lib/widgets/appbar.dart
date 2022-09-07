@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+//       APP BAR OF MAP PAGE
+
 AppBar appbar(bool portrait){return AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -21,7 +23,7 @@ AppBar appbar(bool portrait){return AppBar(
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  width:portrait? 310.w:700.w,
+                  width:portrait? 280.w:700.w,
                 ),
                 Container(
                   padding: EdgeInsets.only(top:portrait? 20.h:90.h),
