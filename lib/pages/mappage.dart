@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:app6/pages/homepage.dart';
 import 'package:app6/widgets/alertdialog.dart';
 import 'package:app6/widgets/appbar.dart';
@@ -21,6 +23,7 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+    actx ()=> context;
     return Scaffold(
       //        APPBAR
       appBar: appbar(context.portrait),
@@ -44,7 +47,7 @@ class _MapPageState extends State<MapPage> {
               Positioned(
                 bottom: 400.h,
                 right: 80.w,
-                child: scanner(context.portrait),
+                child: scanner(context.portrait,context),
               ),
               //    ZOOM AND SETTING BUTTON ON THE BOTTOMLEFT OF MAP
               Positioned(

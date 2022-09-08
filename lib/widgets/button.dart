@@ -14,30 +14,28 @@ ElevatedButton button(
   bool portrait,
   Color background,
   Size size,
-  BuildContext context,
-   {
-    String? page,
+  BuildContext context, {
+  String? page,
   required Color border,
   Function? function,
 }) {
   return ElevatedButton(
     onPressed: () {
-      if (page!=null) {
-      if (button == 'Sign Up') {
-        function!();
-      } else if (button == 'Login') {
-        function!(context);
-      }
-       else{
-        Navigator.pushNamed(context, page);
-      }}
-      else{
+      if (page != null) {
+        if (button == 'Sign Up') {
+          function!();
+        } else if (button == 'Login') {
+          function!(context);
+        } else {
+          Navigator.pushNamed(context, page);
+        }
+      } else {
         Navigator.of(context).pop();
-      }},
-    
+      }
+    },
     style: ElevatedButton.styleFrom(
       shape: StadiumBorder(),
-      primary: background,
+      backgroundColor: background,
       minimumSize: size,
       side: BorderSide(color: border, width: 2),
     ),
@@ -53,7 +51,7 @@ class ElevatedIcon extends StatefulWidget {
   static bool press = false;
   Function rebuild;
   BuildContext ct;
-  ElevatedIcon(this.rebuild,this.ct);
+  ElevatedIcon(this.rebuild, this.ct);
   @override
   State<ElevatedIcon> createState() => _ElevatedIconState();
 }
@@ -64,8 +62,8 @@ class _ElevatedIconState extends State<ElevatedIcon> {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(
           side: BorderSide(color: Colors.white, width: 2),
-          primary: Color(0xff4D8D6E),
-          onPrimary: Colors.white,
+          backgroundColor: Color(0xff4D8D6E),
+          foregroundColor: Colors.white,
           minimumSize:
               context.portrait ? Size(620.w, 200.h) : Size(620.w, 300.h),
           shape: StadiumBorder()),
@@ -74,7 +72,7 @@ class _ElevatedIconState extends State<ElevatedIcon> {
           ElevatedIcon.press = !ElevatedIcon.press;
           Navigator.of(context).pop();
           widget.rebuild();
-          alert(context,widget.ct,context.portrait);
+          alert(context, widget.ct, context.portrait);
         });
       },
       label: Text('Navigate'),
@@ -130,7 +128,7 @@ Expanded txbutton({
 }
 
 //    SCANNER FOR SCANNING AND FINDING LOCATION ON MAP
-Container scanner(bool portrait) {
+Container scanner(bool portrait, BuildContext context) {
   return Container(
     margin: EdgeInsets.all(5),
     padding: EdgeInsets.all(5),
@@ -146,7 +144,9 @@ Container scanner(bool portrait) {
     ),
     child: CircleAvatar(
       child: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/scanpage');
+        },
         iconSize: portrait ? 140.sp : 60.sp,
         alignment: Alignment.center,
         padding: EdgeInsets.zero,
