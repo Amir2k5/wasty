@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// REDIRECTS TO LOGIN OR SIGN UP FOR THIS APP
 
-// REDIRECTS TO LOGIN OR SIGN UP FOR THIS APP 
-
-InkWell redirects(
-    String image, String platform, double height, double width, bool portrait) {
-  return InkWell(
-    onTap: () {},
-    child: Container(
-      height:portrait? 170.h:300.h,
-      width: 570.w,
-      color: Colors.white,
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+Widget redirects(String image, String platform) {
+  return Container(
+    height: 48.h,
+    width: 165.w,
+    color: Colors.white,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
         SizedBox(
-          height:portrait? height:height*2.3,
-          width: portrait?width:width*0.5,
-          child: Center(
-            child: Image(
-              image: AssetImage(image),
-              fit: BoxFit.cover,
-            ),
+          height: 30.sp,
+          width: 30.sp,
+          child: Image(
+            image: AssetImage(image),
+            fit: BoxFit.cover,
           ),
         ),
-        SizedBox(width: 50.w,),
+        SizedBox(
+          width: 20.w,
+        ),
         Text(platform)
-      ],),
+      ],
     ),
   );
 }
